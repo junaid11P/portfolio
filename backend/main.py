@@ -108,7 +108,7 @@ def find_best_match(query: str):
         
         if scores and scores[0]["score"] > 0:
             # RAG: Return the retrieval result directly
-            return f"Found this information: {scores[0]['content']}"
+            return scores[0]["content"]
         return "I checked my database but couldn't find specific info on that. I can tell you about Juned's Experience, Projects, or Skills!"
     except Exception as e:
         print(f"RAG Error: {e}")
