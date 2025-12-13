@@ -1,11 +1,10 @@
 import { Experience } from '@/components/Experience';
 import { useChat } from '@/hooks/useChat';
 import { useStore } from '@/hooks/useStore';
-import { Suspense, useState, KeyboardEvent } from 'react';
+import { Suspense, useState, KeyboardEvent, useRef, useEffect } from 'react';
 import { Projects } from '@/components/UI/Projects';
 import { TechStack } from '@/components/UI/TechStack';
 import { LoadingScreen } from '@/components/UI/LoadingScreen';
-import { Footer } from '@/components/UI/Footer';
 import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
@@ -13,6 +12,15 @@ export default function App() {
     const { sendMessage, loading, messages } = useChat();
     const setAudioUrl = useStore((state) => state.setAudioUrl);
     const [input, setInput] = useState("");
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, loading]);
 
     const handleSend = async () => {
         if (!input.trim() || loading) return;
@@ -123,6 +131,7 @@ export default function App() {
                                 </div>
                             ))}
                             {loading && <div className="text-xs text-primary animate-pulse text-center">Thinking...</div>}
+                            <div ref={messagesEndRef} />
                         </div>
 
                         <div className="flex gap-2">
@@ -144,7 +153,6 @@ export default function App() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </main>
     );
 }
