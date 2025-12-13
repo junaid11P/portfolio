@@ -150,8 +150,17 @@ def generate_gemini_response(query: str):
     try:
         model = genai.GenerativeModel('gemini-2.5-flash')
         response = model.generate_content(prompt)
-        return response.text
+        try:
+            return response.text
+        except ValueError:
+            # If the response was blocked, text raises an error
+            print("Gemini Response blocked.")
+            print(f"Prompt Feedback: {response.prompt_feedback}")
+            print(f"Candidates: {response.candidates}")
+            return "I'm sorry, I can't answer that due to safety guidelines."
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print(f"Gemini API Error: {e}")
         return "I encountered an error while trying to think of an answer."
 
