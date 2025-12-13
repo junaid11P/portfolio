@@ -5,6 +5,8 @@ import { Suspense, useState, KeyboardEvent } from 'react';
 import { Projects } from '@/components/UI/Projects';
 import { TechStack } from '@/components/UI/TechStack';
 import { LoadingScreen } from '@/components/UI/LoadingScreen';
+import { Header } from '@/components/UI/Header';
+import { Footer } from '@/components/UI/Footer';
 import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
@@ -37,7 +39,8 @@ export default function App() {
             </div>
 
             {/* Interface Overlay (HUD) */}
-            <div className="relative z-10 pointer-events-none h-full w-full p-4 lg:p-10 flex flex-col lg:flex-row gap-6 justify-between">
+            <Header />
+            <div className="relative z-10 pointer-events-none h-full w-full p-4 pt-20 pb-16 lg:p-10 lg:pt-24 lg:pb-12 flex flex-col lg:flex-row gap-6 justify-between">
 
                 {/* Left Panel: Profile & Content */}
                 <div className="pointer-events-auto h-full w-full lg:w-1/3 flex flex-col gap-6 overflow-y-auto scrollbar-none pb-20">
@@ -143,6 +146,7 @@ export default function App() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </main>
     );
 }
