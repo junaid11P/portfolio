@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+
 
 type Message = {
     role: 'user' | 'ai';
@@ -19,23 +19,15 @@ interface State {
     addMessage: (message: Message) => void;
 }
 
-export const useStore = create<State>()(
-    persist(
-        (set) => ({
-            audioUrl: null,
-            isPlaying: false,
-            isLoading: false,
-            gesture: null,
-            messages: [],
-            setAudioUrl: (url) => set({ audioUrl: url }),
-            setIsPlaying: (playing) => set({ isPlaying: playing }),
-            setIsLoading: (loading) => set({ isLoading: loading }),
-            setGesture: (gesture) => set({ gesture }),
-            addMessage: (message) => set((state) => ({ messages: [...state.messages, message] })),
-        }),
-        {
-            name: 'portfolio-storage', // name of item in the storage (must be unique)
-            partialize: (state) => ({ messages: state.messages }), // Only persist messages
-        }
-    )
-);
+export const useStore = create<State>()((set) => ({
+    audioUrl: null,
+    isPlaying: false,
+    isLoading: false,
+    gesture: null,
+    messages: [],
+    setAudioUrl: (url) => set({ audioUrl: url }),
+    setIsPlaying: (playing) => set({ isPlaying: playing }),
+    setIsLoading: (loading) => set({ isLoading: loading }),
+    setGesture: (gesture) => set({ gesture }),
+    addMessage: (message) => set((state) => ({ messages: [...state.messages, message] })),
+}));
