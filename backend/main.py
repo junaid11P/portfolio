@@ -96,15 +96,15 @@ class ChatRequest(BaseModel):
 
 # Helper: Find Best Match
 def find_best_match(query: str):
-    if resume_collection is None:
-        return "I cannot access my memory right now (Database Error)."
+    # In-Memory Search (Ultra Fast)
+    if not INITIAL_KNOWLEDGE_BASE:
+         return "I cannot access my memory right now (Knowledge Base Empty)."
     
     lower_query = query.lower()
     try:
-        all_docs = list(resume_collection.find({}))
-        
+        # Search directly in the loaded list
         scores = []
-        for doc in all_docs:
+        for doc in INITIAL_KNOWLEDGE_BASE:
             score = 0
             # Keyword match
             for keyword in doc.get("keywords", []):
