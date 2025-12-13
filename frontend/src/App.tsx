@@ -5,13 +5,14 @@ import { Suspense, useState, KeyboardEvent, useRef, useEffect } from 'react';
 import { Projects } from '@/components/UI/Projects';
 import { TechStack } from '@/components/UI/TechStack';
 import { LoadingScreen } from '@/components/UI/LoadingScreen';
-import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaYoutube, FaInstagram, FaCommentDots, FaTimes } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 export default function App() {
     const { sendMessage, loading, messages } = useChat();
     const setAudioUrl = useStore((state) => state.setAudioUrl);
     const [input, setInput] = useState("");
+    const [isChatOpen, setIsChatOpen] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     const scrollToBottom = () => {
@@ -117,40 +118,59 @@ export default function App() {
                     </div>
                 </div>
 
-                {/* Right Panel: Chat Interface */}
-                <div className="pointer-events-auto w-full lg:w-1/3 flex flex-col justify-end pb-10">
-                    <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden p-4 shadow-2xl">
-                        <div className="h-60 overflow-y-auto mb-4 space-y-2 pr-2 scrollbar-thin">
-                            {messages.length === 0 && <p className="text-white/30 text-sm text-center italic mt-10">Ask my AI twin about my work...</p>}
-                            {messages.map((msg, i) => (
-                                <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                    <div className={`p-2 px-4 rounded-xl text-sm max-w-[80%] ${msg.role === 'user' ? 'bg-primary/20 border border-primary/30 text-white' : 'bg-white/10 border border-white/5 text-gray-200'
-                                        }`}>
-                                        {msg.content}
-                                    </div>
-                                </div>
-                            ))}
-                            {loading && <div className="text-xs text-primary animate-pulse text-center">Thinking...</div>}
-                            <div ref={messagesEndRef} />
-                        </div>
+                {/* Chat Widget & Toggle */}
+                <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 pointer-events-auto">
+                    {/* Chat Window */}
+                    {isChatOpen && (
+                        <div className="w-[350px] md:w-[400px] h-[500px] bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden p-4 shadow-2xl flex flex-col animate-in slide-in-from-bottom-10 fade-in duration-200">
+                            {/* Header of Chat */}
+                            <div className="flex justify-between items-center mb-4 pb-2 border-b border-white/5">
+                                <div className="text-white font-bold text-sm">AI Assistant</div>
+                                <button onClick={() => setIsChatOpen(false)} className="text-white/50 hover:text-white"><FaTimes /></button>
+                            </div>
 
-                        <div className="flex gap-2">
-                            <input
-                                value={input}
-                                onChange={(e) => setInput(e.target.value)}
-                                onKeyDown={onKeyDown}
-                                placeholder="Type a message..."
-                                className="flex-1 bg-black/20 border-white/10 border rounded-xl px-4 py-2 text-white focus:outline-none focus:border-primary/50 transition-colors placeholder:text-white/20"
-                            />
-                            <button
-                                onClick={handleSend}
-                                disabled={loading}
-                                className="bg-primary hover:bg-orange-600 disabled:opacity-50 text-white font-semibold rounded-xl px-6 py-2 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)]"
-                            >
-                                Send
-                            </button>
+                            <div className="flex-1 overflow-y-auto mb-4 space-y-2 pr-2 scrollbar-thin">
+                                {messages.length === 0 && <p className="text-white/30 text-sm text-center italic mt-10">Ask my AI twin about my work...</p>}
+                                {messages.map((msg, i) => (
+                                    <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div className={`p-2 px-4 rounded-xl text-sm max-w-[80%] ${msg.role === 'user'
+                                                ? 'bg-primary/80 border border-primary/30 text-white'
+                                                : 'bg-white/10 border border-white/5 text-gray-200'
+                                            }`}>
+                                            {msg.content}
+                                        </div>
+                                    </div>
+                                ))}
+                                {loading && <div className="text-xs text-primary animate-pulse text-center">Thinking...</div>}
+                                <div ref={messagesEndRef} />
+                            </div>
+
+                            <div className="flex gap-2">
+                                <input
+                                    value={input}
+                                    onChange={(e) => setInput(e.target.value)}
+                                    onKeyDown={onKeyDown}
+                                    placeholder="Type a message..."
+                                    className="flex-1 bg-black/20 border-white/10 border rounded-xl px-4 py-2 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-white/20"
+                                />
+                                <button
+                                    onClick={handleSend}
+                                    disabled={loading}
+                                    className="bg-primary hover:bg-orange-600 disabled:opacity-50 text-white font-semibold rounded-xl px-4 py-2 transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)] text-sm"
+                                >
+                                    Send
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    )}
+
+                    {/* Toggle Button */}
+                    <button
+                        onClick={() => setIsChatOpen(!isChatOpen)}
+                        className="bg-primary hover:scale-110 transition-transform shadow-[0_0_20px_rgba(249,115,22,0.5)] text-white p-4 rounded-full"
+                    >
+                        {isChatOpen ? <FaTimes size={24} /> : <FaCommentDots size={24} />}
+                    </button>
                 </div>
             </div>
         </main>
