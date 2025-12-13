@@ -38,7 +38,7 @@ export default function App() {
     };
 
     return (
-        <main className="h-screen w-full relative overflow-hidden bg-background text-foreground">
+        <main className="h-screen w-full relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-[#0a0a0a] to-black text-foreground">
             {/* 3D Scene Container */}
             <div className="absolute inset-0 z-0 text-white">
                 <Suspense fallback={<LoadingScreen />}>
