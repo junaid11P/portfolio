@@ -122,7 +122,7 @@ export default function App() {
                 <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 pointer-events-auto">
                     {/* Chat Window */}
                     {isChatOpen && (
-                        <div className="w-[350px] md:w-[400px] h-[500px] bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden p-4 shadow-2xl flex flex-col animate-in slide-in-from-bottom-10 fade-in duration-200">
+                        <div className="w-[260px] md:w-[300px] h-[375px] bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden p-4 shadow-2xl flex flex-col animate-in slide-in-from-bottom-10 fade-in duration-200">
                             {/* Header of Chat */}
                             <div className="flex justify-between items-center mb-4 pb-2 border-b border-white/5">
                                 <div className="text-white font-bold text-sm">AI Assistant</div>
@@ -134,8 +134,8 @@ export default function App() {
                                 {messages.map((msg, i) => (
                                     <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                         <div className={`p-2 px-4 rounded-xl text-sm max-w-[80%] ${msg.role === 'user'
-                                                ? 'bg-primary/80 border border-primary/30 text-white'
-                                                : 'bg-white/10 border border-white/5 text-gray-200'
+                                            ? 'bg-primary/80 border border-primary/30 text-white'
+                                            : 'bg-white/10 border border-white/5 text-gray-200'
                                             }`}>
                                             {msg.content}
                                         </div>
