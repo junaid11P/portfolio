@@ -1,6 +1,5 @@
 fastapi
 uvicorn
 pymongo
-google-generativeai
 python-dotenv
 requests

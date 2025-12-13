@@ -1,186 +1,220 @@
 [
     {
         "keywords": [
-            "who",
-            "about",
-            "juned",
-            "bio",
-            "introduction"
+            "who are you",
+            "what are you",
+            "your identity",
+            "about you"
         ],
-        "content": "I am Juned, a passionate Full Stack Developer and AI Specialist based in Bengaluru, India. I specialize in building immersive 3D web applications and intelligent AI solutions. I am currently living in BTM Stage 2, Bengaluru."
+        "content": "I am an AI-powered chatbot developed by Juned. I act as his virtual assistant and help users learn about his skills, projects, experience, and career journey."
     },
     {
         "keywords": [
-            "contact",
+            "are you juned",
+            "is this juned",
+            "are you a human"
+        ],
+        "content": "No, I am not Juned. I am an AI bot created by Juned to represent his portfolio, answer questions about his background, and showcase his work."
+    },
+    {
+        "keywords": [
+            "what do you do",
+            "your purpose",
+            "why were you created"
+        ],
+        "content": "I was created by Juned to serve as an interactive AI portfolio assistant that explains his resume, projects, skills, and experience in a conversational way."
+    },
+    {
+        "keywords": [
+            "tell me about juned",
+            "who is juned",
+            "about juned"
+        ],
+        "content": "Juned is a Full Stack Developer and AI Specialist based in Bengaluru, India. He works on MERN stack applications, AI systems, machine learning projects, and immersive 3D web experiences."
+    },
+    {
+        "keywords": [
+            "juned profession",
+            "juned role",
+            "what does juned do"
+        ],
+        "content": "Juned works as a Full Stack Developer and AI Engineer, building complete end-to-end systems that combine frontend development, backend APIs, AI models, and 3D interaction."
+    },
+    {
+        "keywords": [
+            "contact juned",
+            "juned contact",
             "email",
-            "phone",
-            "linkedin",
-            "github",
-            "youtube",
-            "reach"
+            "phone"
         ],
-        "content": "You can contact me via Email: Muhammadjunaid8105@gmail.com or Phone: +91 8105238129. Connect with me on LinkedIn: linkedin.com/in/juned11, GitHub: github.com/junaid11P, or YouTube: youtube.com/@JunnuBlr."
+        "content": "You can contact Juned via email at Muhammadjunaid8105@gmail.com or by phone at +91 8105238129. You can also find him on LinkedIn, GitHub, and YouTube."
     },
     {
         "keywords": [
-            "native",
-            "hometown",
-            "place",
-            "origin"
+            "where is juned from",
+            "juned location",
+            "based in"
         ],
-        "content": "My native place includes Jayaanagara, Hosanagara, Shimogga, Karnataka, India."
+        "content": "Juned is currently based in Bengaluru, India."
     },
     {
         "keywords": [
-            "current",
-            "living",
-            "location",
-            "address"
+            "juned experience",
+            "work experience",
+            "career history"
         ],
-        "content": "I currently reside at BTM Stage 2, Bengaluru, Karnataka, India."
+        "content": "Juned has professional experience as a Full Stack Web Development Intern, AI & Robotics Master Trainer, TinkerLab Trainer Intern, and System Administrator Intern."
     },
     {
         "keywords": [
-            "experience",
-            "work",
-            "job",
-            "internship",
-            "edunet",
-            "auction"
+            "edunet internship",
+            "mern internship"
         ],
-        "content": "I worked as a Full Stack Web Development Intern at Edunet Foundation. I developed an online auction platform using the MERN stack (MongoDB, Express, React, Node), built RESTful APIs, and optimized database queries."
+        "content": "At Edunet Foundation, Juned worked as a Full Stack Web Development Intern, where he built an online auction platform using the MERN stack and optimized backend APIs."
     },
     {
         "keywords": [
-            "experience",
-            "work",
-            "trainer",
             "agilo",
             "stempedia",
-            "robotics",
-            "ai"
+            "ai trainer experience"
         ],
-        "content": "I served as an AI & Robotics Master Trainer at Agilo Research (STEMpedia). I conducted sessions on AI/ML and robotics, guided students for international competitions like CODEAVOUR, and represented the company at G20 events."
+        "content": "At Agilo Research (STEMpedia), Juned served as an AI & Robotics Master Trainer, conducting AI and robotics sessions, guiding students for CODEAVOUR competitions, and representing the organization at G20 events."
     },
     {
         "keywords": [
-            "experience",
-            "work",
             "samarthanam",
-            "tinkerlab",
-            "teaching"
+            "tinkerlab"
         ],
-        "content": "I was a TinkerLab Trainer Intern at Samarthanam Trust for the Disabled. I trained students and teachers in 7 government schools on Micro:bit, app development, and 3D printing."
+        "content": "At Samarthanam Trust, Juned worked as a TinkerLab Trainer Intern, training teachers and students in Micro:bit, robotics, mobile app development, and 3D printing."
     },
     {
         "keywords": [
-            "experience",
-            "work",
-            "system admin",
-            "universal computer"
+            "system administrator",
+            "networking internship"
         ],
-        "content": "I interned as a System Administrator at Universal Computer Sales & Services, managing networks, server configurations, and hardware troubleshooting."
+        "content": "Juned interned as a System Administrator at Universal Computer Sales & Services, where he handled networking, server configuration, and system troubleshooting."
     },
     {
         "keywords": [
-            "project",
+            "juned projects",
+            "portfolio projects"
+        ],
+        "content": "Juned has worked on several projects including an AI-powered 3D virtual tutor, real-time chatbot systems, deep learning applications, and full-stack MERN platforms."
+    },
+    {
+        "keywords": [
             "ai guru j",
-            "flagship",
-            "tutor",
-            "3d"
+            "3d tutor",
+            "virtual python teacher"
         ],
-        "content": "AI Guru J is my flagship project (Feb-Mar 2025). It's an Intelligent 3D Virtual Python Tutor built with React, Three.js, FastAPI, Gemini 2.5, and TikTok TTS. It features a lip-synced avatar teaching Python."
+        "content": "AI Guru J is an intelligent 3D virtual Python tutor developed by Juned. It answers Python questions using an AI model, speaks using text-to-speech, and uses a lip-synced 3D avatar for interactive learning."
     },
     {
         "keywords": [
-            "project",
-            "chatbot",
-            "real-time"
+            "ai guru j tech stack",
+            "ai guru j technologies"
         ],
-        "content": "I built a Chatbot Application (Aug 2022 - Jul 2023) using React.js, Nhost, Hasura, and n8n. It's a secure real-time messaging app with email authentication."
+        "content": "AI Guru J uses React, Three.js, FastAPI, a custom AI model with RAG architecture, speech recognition, text-to-speech, lip-sync animation, and MongoDB Atlas."
     },
     {
         "keywords": [
-            "project",
+            "chatbot project",
+            "real time chatbot"
+        ],
+        "content": "Juned developed a real-time chatbot application using React.js, Nhost, Hasura, and n8n, focusing on secure authentication and scalable messaging."
+    },
+    {
+        "keywords": [
             "emotion recognition",
-            "deep learning",
-            "cnn"
+            "deep learning project"
         ],
-        "content": "I developed a Face Emotion Recognition system (Jan-Mar 2022) using TensorFlow, Keras, and OpenCV. It uses a CNN trained on the FER-2013 dataset to classify emotions."
+        "content": "Juned built a Face Emotion Recognition system using TensorFlow, Keras, and OpenCV, training a convolutional neural network on the FER-2013 dataset."
     },
     {
         "keywords": [
-            "project",
-            "auction",
-            "mern"
+            "auction platform",
+            "mern auction project"
         ],
-        "content": "I created an Online Auction Platform (May-Jun 2021) using the MERN stack, facilitating real-time bidding."
+        "content": "Juned developed a full-stack Online Auction Platform using the MERN stack, supporting real-time bidding and user authentication."
     },
     {
         "keywords": [
-            "education",
+            "juned education",
             "degree",
-            "b.tech",
-            "engineering",
-            "ramaiah"
+            "btech"
         ],
-        "content": "I am pursuing a B.Tech in Computer Science & Engineering at M. S. Ramaiah University of Applied Sciences (2023-2026), current CGPA: 8.41."
+        "content": "Juned is pursuing a B.Tech in Computer Science and Engineering at M. S. Ramaiah University of Applied Sciences with a CGPA of 8.41."
     },
     {
         "keywords": [
-            "education",
-            "diploma",
+            "juned diploma",
             "polytechnic"
         ],
-        "content": "I hold a Diploma in Computer Science & Engineering from Dr. T. M. A. Pai Polytechnic, Manipal (2018-2022) with 63.25%."
+        "content": "Before his degree, Juned completed a Diploma in Computer Science and Engineering from Dr. T. M. A. Pai Polytechnic, Manipal."
     },
     {
         "keywords": [
-            "skills",
-            "languages",
-            "frameworks",
-            "tools",
-            "tech stack"
+            "juned skills",
+            "technical skills"
         ],
-        "content": "My skills include: Languages (Python, Java, C, HTML, CSS), Frameworks (React, Node, Express, OpenCV, Pandas), Databases (MongoDB, MySQL), and Tools (GitHub, Docker, Arduino, Figma)."
+        "content": "Juned’s technical skills include Python, Java, C, HTML, CSS, JavaScript, React.js, Node.js, Express.js, MongoDB, MySQL, TensorFlow, OpenCV, NumPy, Pandas, Docker, GitHub, REST APIs, OOP, DSA, and AI/ML concepts."
+    },
+    {
+        "keywords": [
+            "ai skills",
+            "machine learning skills"
+        ],
+        "content": "Juned has strong hands-on experience in AI and Machine Learning, including deep learning models, NLP-based chatbots, face emotion recognition, and AI-powered educational systems."
     },
     {
         "keywords": [
             "certifications",
-            "courses",
-            "learning"
+            "courses"
         ],
-        "content": "My certifications include: Generative AI (Coursera), NoSQL/Big Data (IBM), Microsoft AI Classroom, and various robotics certifications from STEMpedia."
+        "content": "Juned has completed certifications in Generative AI, NoSQL & Big Data, Microsoft AI Classroom, MERN Stack development, and AI & Robotics."
     },
     {
         "keywords": [
-            "achievements",
-            "awards"
+            "juned achievements",
+            "accomplishments"
         ],
-        "content": "I have trained 100+ teachers in STEM, built multiple AI applications, and created immersive 3D learning systems."
+        "content": "Juned’s achievements include training over 100 teachers in AI and robotics, building multiple AI-powered applications, and creating 3D and voice-enabled learning platforms."
     },
     {
         "keywords": [
-            "interests",
-            "hobbies"
+            "career goal",
+            "future plans"
         ],
-        "content": "I enjoy Full Stack Dev, AI/Robotics, Video Creation, Photography, Gaming, and Content Creation on YouTube."
+        "content": "Juned’s career goal is to build scalable AI-driven systems and immersive learning platforms that combine artificial intelligence, software engineering, and 3D visualization."
+    },
+    {
+        "keywords": [
+            "why hire juned",
+            "hire juned"
+        ],
+        "content": "Juned should be hired for his strong full stack and AI skills, real-world project experience, teaching background, and ability to deliver complete intelligent solutions."
     },
     {
         "keywords": [
             "hi",
             "hello",
-            "hey",
-            "greeting"
+            "hey"
         ],
-        "content": "Hello! I am Juned's virtual assistant. How can I help you know more about him today?"
+        "content": "Hello! 👋 I’m an AI chatbot developed by Juned. How can I help you today?"
     },
     {
         "keywords": [
             "how are you",
             "what's up"
         ],
-        "content": "I'm just a virtual avatar, but I'm ready to showcase Juned's portfolio! What would you like to see?"
+        "content": "I’m functioning perfectly and ready to assist you with information about Juned’s profile and projects."
+    },
+    {
+        "keywords": [
+            "thanks",
+            "thank you"
+        ],
+        "content": "You’re welcome! 😊 I’m happy to help. Feel free to ask more about Juned."
     },
     {
         "keywords": [
@@ -188,6 +222,14 @@
             "goodbye",
             "see you"
         ],
-        "content": "Goodbye! Feel free to come back if you have more questions about Juned."
+        "content": "Goodbye! 👋 I’m always here if you want to explore Juned’s work again."
+    },
+    {
+        "keywords": [
+            "unknown",
+            "not sure",
+            "no idea"
+        ],
+        "content": "I don’t have information on that yet, but I can help you with Juned’s skills, projects, education, or experience."
     }
 ]

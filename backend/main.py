@@ -6,7 +6,6 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
-import google.generativeai as genai
 from pymongo import MongoClient
 
 # Load environment variables
@@ -41,17 +40,6 @@ try:
         print("Warning: MONGODB_URI not found in .env")
 except Exception as e:
     print(f"MongoDB Connection Error: {e}")
-
-# Gemini Setup
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel(
-        model_name="gemini-2.5-flash",
-        system_instruction="You are Juned's AI Friend, a virtual assistant developed by him to showcase his portfolio. Answer questions based on the provided context."
-    )
-else:
-    print("Warning: GEMINI_API_KEY not found in .env")
 
 # Seed Data
 # Load Knowledge Base from JSON
@@ -119,8 +107,9 @@ def find_best_match(query: str):
         scores.sort(key=lambda x: x["score"], reverse=True)
         
         if scores and scores[0]["score"] > 0:
-            return scores[0]["content"]
-        return "I can tell you about Juned's Experience, Projects, or Skills!"
+            # RAG: Return the retrieval result directly
+            return f"Found this information: {scores[0]['content']}"
+        return "I checked my database but couldn't find specific info on that. I can tell you about Juned's Experience, Projects, or Skills!"
     except Exception as e:
         print(f"RAG Error: {e}")
         return "I having trouble recalling that."
@@ -129,20 +118,12 @@ def find_best_match(query: str):
 async def chat(request: ChatRequest):
     message = request.message
     
-    # 1. RAG
-    context = find_best_match(message)
+    # 1. Retrieval (Your Custom Model Logic)
+    # The "model" is now your data.json content + this matching algorithm
+    text = find_best_match(message)
     
     try:
-        # 2. Generate Text
-        prompt = f"""
-            Context: {context}
-            User Question: {message}
-            System: Provide a concise, friendly answer (under 2 sentences) suitable for speech.
-        """
-        response = model.generate_content(prompt)
-        text = response.text
-        
-        # 3. Generate Audio
+        # 2. Generate Audio (TTS)
         audio_base64 = None
         try:
             tts_url = "https://tiktok-tts.weilnet.workers.dev/api/generation"
