@@ -65,7 +65,7 @@ export default function App() {
                         <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50 mb-2">
                             Hello,<br /> I'm <span className="text-primary">Juned</span>
                         </h1>
-                        <p className="text-white/60 text-lg mb-4">Full Stack Developer & AI Specialist</p>
+                        <p className="text-white/60 text-lg mb-4">Software Developer</p>
 
                         {/* Social Icons */}
                         <div className="flex gap-4 mb-6">
@@ -171,6 +171,11 @@ export default function App() {
                     >
                         {isChatOpen ? <FaTimes size={24} /> : <FaCommentDots size={24} />}
                     </button>
+                    {!isChatOpen && (
+                        <div className="absolute right-20 top-4 w-40 text-white/80 text-xs font-medium bg-black/50 backdrop-blur-md p-2 rounded-lg border border-white/10 animate-pulse">
+                            Chat with AI to interact with 3D Avatar &larr;
+                        </div>
+                    )}
                 </div>
             </div>
         </main>
