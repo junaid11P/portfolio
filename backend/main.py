@@ -1,5 +1,6 @@
 import os
 import requests
+import json
 import base64
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -53,38 +54,35 @@ else:
     print("Warning: GEMINI_API_KEY not found in .env")
 
 # Seed Data
-INITIAL_KNOWLEDGE_BASE = [
-    {
-        "keywords": ["who", "about", "juned", "bio"],
-        "content": "I am Juned, a passionate Full Stack Developer and AI Specialist based in Bengaluru, India. I specialize in building immersive 3D web applications and intelligent AI solutions."
-    },
-    {
-        "keywords": ["experience", "work", "job"],
-        "content": "I have experience as a Full Stack Web Development Intern at Edunet Foundation (MERN Auction Platform) and as an AI & Robotics Master Trainer at Agilo Research."
-    },
-    {
-        "keywords": ["ai guru j", "project"],
-        "content": "AI Guru J is my flagship project: an Intelligent 3D Virtual Python Tutor using React, Three.js, and Gemini."
-    },
-    {
-        "keywords": ["contact", "email", "phone"],
-        "content": "I prefer to be contacted via Email or LinkedIn. Email: Muhammadjunaid8105@gmail.com | LinkedIn: https://linkedin.com/in/juned11 | GitHub: junaid11P. (I do not share my phone number publicly)."
-    },
-    {
-        "keywords": ["your name", "who are you"],
-        "content": "I am Juned's AI Friend, a virtual assistant developed by him to showcase his portfolio. Think of me as a living reflection of his technical expertise!"
-    }
-]
+# Load Knowledge Base from JSON
+def load_knowledge_base():
+    try:
+        with open('data.json', 'r') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error loading data.json: {e}")
+        return []
+
+INITIAL_KNOWLEDGE_BASE = load_knowledge_base()
 
 def seed_database():
     if resume_collection is not None:
         try:
-            count = resume_collection.count_documents({})
-            if count == 0:
-                resume_collection.insert_many(INITIAL_KNOWLEDGE_BASE)
-                print("Database seeded with initial resume data.")
-            else:
-                print("Database already contains Data.")
+            # Check if we have data to seed
+            if not INITIAL_KNOWLEDGE_BASE:
+                print("No data to seed.")
+                return
+
+            # Optional: Clear existing data to ensure updates are applied
+            # For a personal portfolio, this is usually strictly better than "only if empty"
+            existing_count = resume_collection.count_documents({})
+            if existing_count > 0:
+                print(f"Clearing {existing_count} existing documents to update knowledge base...")
+                resume_collection.delete_many({})
+            
+            resume_collection.insert_many(INITIAL_KNOWLEDGE_BASE)
+            print("Database seeded/updated with data.json content.")
+            
         except Exception as e:
             print(f"Seeding Error: {e}")
 

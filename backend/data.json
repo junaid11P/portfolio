@@ -1,0 +1,193 @@
+[
+    {
+        "keywords": [
+            "who",
+            "about",
+            "juned",
+            "bio",
+            "introduction"
+        ],
+        "content": "I am Juned, a passionate Full Stack Developer and AI Specialist based in Bengaluru, India. I specialize in building immersive 3D web applications and intelligent AI solutions. I am currently living in BTM Stage 2, Bengaluru."
+    },
+    {
+        "keywords": [
+            "contact",
+            "email",
+            "phone",
+            "linkedin",
+            "github",
+            "youtube",
+            "reach"
+        ],
+        "content": "You can contact me via Email: Muhammadjunaid8105@gmail.com or Phone: +91 8105238129. Connect with me on LinkedIn: linkedin.com/in/juned11, GitHub: github.com/junaid11P, or YouTube: youtube.com/@JunnuBlr."
+    },
+    {
+        "keywords": [
+            "native",
+            "hometown",
+            "place",
+            "origin"
+        ],
+        "content": "My native place includes Jayaanagara, Hosanagara, Shimogga, Karnataka, India."
+    },
+    {
+        "keywords": [
+            "current",
+            "living",
+            "location",
+            "address"
+        ],
+        "content": "I currently reside at BTM Stage 2, Bengaluru, Karnataka, India."
+    },
+    {
+        "keywords": [
+            "experience",
+            "work",
+            "job",
+            "internship",
+            "edunet",
+            "auction"
+        ],
+        "content": "I worked as a Full Stack Web Development Intern at Edunet Foundation. I developed an online auction platform using the MERN stack (MongoDB, Express, React, Node), built RESTful APIs, and optimized database queries."
+    },
+    {
+        "keywords": [
+            "experience",
+            "work",
+            "trainer",
+            "agilo",
+            "stempedia",
+            "robotics",
+            "ai"
+        ],
+        "content": "I served as an AI & Robotics Master Trainer at Agilo Research (STEMpedia). I conducted sessions on AI/ML and robotics, guided students for international competitions like CODEAVOUR, and represented the company at G20 events."
+    },
+    {
+        "keywords": [
+            "experience",
+            "work",
+            "samarthanam",
+            "tinkerlab",
+            "teaching"
+        ],
+        "content": "I was a TinkerLab Trainer Intern at Samarthanam Trust for the Disabled. I trained students and teachers in 7 government schools on Micro:bit, app development, and 3D printing."
+    },
+    {
+        "keywords": [
+            "experience",
+            "work",
+            "system admin",
+            "universal computer"
+        ],
+        "content": "I interned as a System Administrator at Universal Computer Sales & Services, managing networks, server configurations, and hardware troubleshooting."
+    },
+    {
+        "keywords": [
+            "project",
+            "ai guru j",
+            "flagship",
+            "tutor",
+            "3d"
+        ],
+        "content": "AI Guru J is my flagship project (Feb-Mar 2025). It's an Intelligent 3D Virtual Python Tutor built with React, Three.js, FastAPI, Gemini 2.5, and TikTok TTS. It features a lip-synced avatar teaching Python."
+    },
+    {
+        "keywords": [
+            "project",
+            "chatbot",
+            "real-time"
+        ],
+        "content": "I built a Chatbot Application (Aug 2022 - Jul 2023) using React.js, Nhost, Hasura, and n8n. It's a secure real-time messaging app with email authentication."
+    },
+    {
+        "keywords": [
+            "project",
+            "emotion recognition",
+            "deep learning",
+            "cnn"
+        ],
+        "content": "I developed a Face Emotion Recognition system (Jan-Mar 2022) using TensorFlow, Keras, and OpenCV. It uses a CNN trained on the FER-2013 dataset to classify emotions."
+    },
+    {
+        "keywords": [
+            "project",
+            "auction",
+            "mern"
+        ],
+        "content": "I created an Online Auction Platform (May-Jun 2021) using the MERN stack, facilitating real-time bidding."
+    },
+    {
+        "keywords": [
+            "education",
+            "degree",
+            "b.tech",
+            "engineering",
+            "ramaiah"
+        ],
+        "content": "I am pursuing a B.Tech in Computer Science & Engineering at M. S. Ramaiah University of Applied Sciences (2023-2026), current CGPA: 8.41."
+    },
+    {
+        "keywords": [
+            "education",
+            "diploma",
+            "polytechnic"
+        ],
+        "content": "I hold a Diploma in Computer Science & Engineering from Dr. T. M. A. Pai Polytechnic, Manipal (2018-2022) with 63.25%."
+    },
+    {
+        "keywords": [
+            "skills",
+            "languages",
+            "frameworks",
+            "tools",
+            "tech stack"
+        ],
+        "content": "My skills include: Languages (Python, Java, C, HTML, CSS), Frameworks (React, Node, Express, OpenCV, Pandas), Databases (MongoDB, MySQL), and Tools (GitHub, Docker, Arduino, Figma)."
+    },
+    {
+        "keywords": [
+            "certifications",
+            "courses",
+            "learning"
+        ],
+        "content": "My certifications include: Generative AI (Coursera), NoSQL/Big Data (IBM), Microsoft AI Classroom, and various robotics certifications from STEMpedia."
+    },
+    {
+        "keywords": [
+            "achievements",
+            "awards"
+        ],
+        "content": "I have trained 100+ teachers in STEM, built multiple AI applications, and created immersive 3D learning systems."
+    },
+    {
+        "keywords": [
+            "interests",
+            "hobbies"
+        ],
+        "content": "I enjoy Full Stack Dev, AI/Robotics, Video Creation, Photography, Gaming, and Content Creation on YouTube."
+    },
+    {
+        "keywords": [
+            "hi",
+            "hello",
+            "hey",
+            "greeting"
+        ],
+        "content": "Hello! I am Juned's virtual assistant. How can I help you know more about him today?"
+    },
+    {
+        "keywords": [
+            "how are you",
+            "what's up"
+        ],
+        "content": "I'm just a virtual avatar, but I'm ready to showcase Juned's portfolio! What would you like to see?"
+    },
+    {
+        "keywords": [
+            "bye",
+            "goodbye",
+            "see you"
+        ],
+        "content": "Goodbye! Feel free to come back if you have more questions about Juned."
+    }
+]
