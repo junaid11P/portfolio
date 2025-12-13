@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 from pymongo import MongoClient
+import google.generativeai as genai
 
 # Load environment variables
 load_dotenv()
@@ -24,6 +25,12 @@ app.add_middleware(
 
 # MongoDB Connection
 MONGO_URI = os.getenv("MONGODB_URI")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
+else:
+    print("Warning: GEMINI_API_KEY not found in .env")
 client = None
 db = None
 resume_collection = None
@@ -81,6 +88,7 @@ if client:
 # Models
 class ChatRequest(BaseModel):
     message: str
+    use_gemini_2_5: bool = False
 
 # Helper: Find Best Match
 def find_best_match(query: str):
@@ -114,13 +122,52 @@ def find_best_match(query: str):
         print(f"RAG Error: {e}")
         return "I having trouble recalling that."
 
+def generate_gemini_response(query: str):
+    if not GEMINI_API_KEY:
+        return "Gemini API Key is missing. I cannot generate a response."
+    
+    # Prepare Context from Knowledge Base
+    context_text = ""
+    if INITIAL_KNOWLEDGE_BASE:
+        # Use a subset or summary if the base is huge, but for a portfolio data.json, it's likely small enough to pass all.
+        # Format it nicely
+        # Exclude _id (ObjectId) which is not serializable and not needed
+        cleaned_data = [{k: v for k, v in doc.items() if k != '_id'} for doc in INITIAL_KNOWLEDGE_BASE]
+        context_text = json.dumps(cleaned_data, indent=2)
+    
+    prompt = f"""
+    You are an AI assistant for a portfolio website. 
+    A user has asked: "{query}"
+    
+    Here is the information you have about the portfolio owner (Juned):
+    {context_text}
+    
+    Strictly use ONLY the provided information to answer the question. 
+    If the answer is not in the provided information, say "I don't have that information in my database."
+    Keep the answer concise and conversational.
+    """
+    
+    try:
+        model = genai.GenerativeModel('gemini-2.5-flash')
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        print(f"Gemini API Error: {e}")
+        return "I encountered an error while trying to think of an answer."
+
 @app.post("/api/chat")
 async def chat(request: ChatRequest):
     message = request.message
+    use_gemini_2_5 = request.use_gemini_2_5
     
-    # 1. Retrieval (Your Custom Model Logic)
-    # The "model" is now your data.json content + this matching algorithm
-    text = find_best_match(message)
+    text = ""
+    
+    if use_gemini_2_5:
+        print(f"Using Gemini 2.5 for query: {message}")
+        text = generate_gemini_response(message)
+    else:
+        # 1. Retrieval (Existing Keyword Logic)
+        text = find_best_match(message)
     
     try:
         # 2. Generate Audio (TTS)

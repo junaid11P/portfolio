@@ -36,7 +36,7 @@ export const useChat = () => {
             const res = await fetch(`${API_URL}/api/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: text }),
+                body: JSON.stringify({ message: text, use_gemini_2_5: true }),
             });
 
             const data = await res.json();
