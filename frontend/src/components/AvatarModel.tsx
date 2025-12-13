@@ -2,8 +2,7 @@
 
 import { useStore } from '@/hooks/useStore';
 import { useGLTF, useAnimations, useFBX } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 // Working default avatar (Ready Player Me)

@@ -28,7 +28,6 @@ export const Experience = () => {
                 enableZoom={false}
                 enablePan={false}
                 enableRotate={false}
-                enableKeys={false}
                 minPolarAngle={Math.PI / 2.2}
                 maxPolarAngle={Math.PI / 2.2}
             />
