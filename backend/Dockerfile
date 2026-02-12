@@ -9,7 +9,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application
 COPY . .
 
-# Expose port (Render sets PORT env var, but good for local)
+# Pre-generate vector data during build
+# This also pre-loads the embedding model into the image
+RUN cd rag && python ingest_data.py
+
+# Expose port
 EXPOSE 5001
 
 # Run the application
