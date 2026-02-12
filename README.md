@@ -1,8 +1,15 @@
 # 3D AI Portfolio
 
-An immersive 3D Portfolio website featuring an interactive 3D Avatar, AI-powered Chat (RAG + Gemini), and Voice interaction.
+An immersive 3D Portfolio website featuring an interactive 3D Avatar, AI-powered Chat (Local RAG + Gemini 2.5), and Voice interaction.
 
-## Tech Stack
+## 🚀 Key Features
+- **3D Interactive Avatar**: Immersive experience built with Three.js.
+- **Local RAG Pipeline**: Lightning-fast document retrieval using `FastEmbed` and local vector storage (no Docker/Milvus required).
+- **Gemini 2.5 Flash**: State-of-the-art AI for intelligent, context-aware responses.
+- **Voice Interaction**: Integrated Text-to-Speech (TTS) for a human-like assistant feel.
+- **Deployment Ready**: Optimized to run on low-resource environments (under 512MB RAM).
+
+## 🛠️ Tech Stack
 
 ### Frontend
 - **React** (Vite)
@@ -11,19 +18,19 @@ An immersive 3D Portfolio website featuring an interactive 3D Avatar, AI-powered
 
 ### Backend
 - **FastAPI** (Python)
-- **MongoDB** (Database / Knowledge Base)
-- **Google Gemini** (AI Model)
+- **Google Gemini 2.5 Flash** (AI Model)
+- **FastEmbed** (Vector Embeddings)
+- **NumPy** (Local Vector Search)
 - **TikTok TTS** (Text to Speech)
 
-## Getting Started
+## 🏁 Getting Started
 
 ### Prerequisites
 - Node.js & npm
 - Python 3.10+
-- MongoDB Atlas Account
-- Google Gemini API Key
+- Google Gemini API Key (from [Google AI Studio](https://aistudio.google.com/))
 
-### Installation
+### Installation & Setup
 
 1. **Clone the repository:**
    ```bash
@@ -31,44 +38,50 @@ An immersive 3D Portfolio website featuring an interactive 3D Avatar, AI-powered
    cd portfolio
    ```
 
-2. **Backend Dependencies:**
+2. **Backend Setup:**
    ```bash
    cd backend
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    pip install -r requirements.txt
    ```
 
 3. **Environment Setup:**
-   - Go to `backend/` folder.
-   - Copy `.env.example` to a new file named `.env`.
-   - Add your own keys:
-     ```bash
-     GEMINI_API_KEY=your_key_here
-     MONGODB_URI=your_mongodb_uri_here
+   - In the `backend/` folder, copy `.env.example` to `.env`.
+   - Add your API key:
+     ```env
+     GEMINI_API_KEY=your_actual_key_here
      ```
-   - **⚠️ Security:** Never commit your `.env` file to version control. It is already included in `.gitignore`.
 
-4. **Run Backend:**
+4. **Prepare Vector Data (Ingestion):**
+   - Run the ingestion script to process your resume/data into local vector storage:
+     ```bash
+     cd rag
+     python ingest_data.py
+     cd ..
+     ```
+
+5. **Run Backend:**
    ```bash
    python main.py
    ```
 
-5. **Frontend Setup:**
+6. **Frontend Setup:**
    ```bash
-   cd frontend
+   cd ../frontend
    npm install
    npm run dev
    ```
 
-## Deployment for Render
+## ☁️ Deployment for Render
 
-This project includes a `render.yaml` blueprint for easy deployment.
+This project is optimized for [Render](https://render.com) using the `render.yaml` blueprint.
 
-1. Push code to GitHub.
-2. Log in to [Render](https://render.com).
-3. Click "New +" -> "Blueprint".
-4. Select this repository.
-5. Accept the default configuration.
-6. **Important:** Go to the **Backend Service** dashboard on Render and add your Environment Variables (`MONGODB_URI`, `GEMINI_API_KEY`).
+1. Push your code to GitHub (ensure `.env` and `.pkl` files are ignored).
+2. Create a "New Blueprint Instance" on Render.
+3. Select this repository.
+4. **Environment Variables**: Add `GEMINI_API_KEY` in the Render dashboard for the backend service.
+5. **Memory Management**: The system is designed to run within Render's free tier (512MB RAM).
 
-## License
+## 📄 License
 MIT

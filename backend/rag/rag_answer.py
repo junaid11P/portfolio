@@ -8,7 +8,7 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 if base_dir not in sys.path:
     sys.path.append(base_dir)
 
-from milvus_search import search
+from vector_search import search
 
 # Load environment variables
 load_dotenv()

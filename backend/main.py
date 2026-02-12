@@ -1,13 +1,9 @@
 import os
 import requests
-import json
-import base64
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
-from pymongo import MongoClient
-import google.generativeai as genai
 from rag.rag_answer import generate_rag_answer
 
 # Load environment variables
