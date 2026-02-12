@@ -24,31 +24,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# MongoDB Connection
-MONGO_URI = os.getenv("MONGODB_URI")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-
-if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
-else:
-    print("Warning: GEMINI_API_KEY not found in .env")
-client = None
-db = None
-resume_collection = None
-
-try:
-    if MONGO_URI:
-        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
-        # Force connection check
-        client.admin.command('ping')
-        print("MongoDB Connected")
-        db = client.get_database() # Uses default db in URI
-        resume_collection = db["resume"]
-    else:
-        print("Warning: MONGODB_URI not found in .env")
-except Exception as e:
-    print(f"MongoDB Connection Error: {e}")
-
 # Models
 class ChatRequest(BaseModel):
     message: str

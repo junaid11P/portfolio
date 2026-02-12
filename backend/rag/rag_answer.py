@@ -18,6 +18,9 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
 
+# Initialize Gemini Model globally
+model = genai.GenerativeModel('gemini-2.5-flash')
+
 def generate_rag_answer(question):
     print(f"Searching local vectors for: {question}...")
     results = search(question, top_k=3)
@@ -42,7 +45,6 @@ def generate_rag_answer(question):
     """
 
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
         response = model.generate_content(prompt)
         return response.text
     except Exception as e:
