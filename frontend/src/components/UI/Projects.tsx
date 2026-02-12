@@ -4,6 +4,13 @@ import { GlassCard } from './GlassCard';
 
 const projects = [
     {
+        title: "RAGI – Production-Ready RAG Architecture",
+        desc: "AI-powered document chat system enabling users to upload PDF, DOCX, and TXT files and interact with them using a lightweight Retrieval-Augmented Generation (RAG) pipeline.",
+        tech: ["FastAPI", "FastEmbed (ONNX)", "Groq LLM", "MongoDB Atlas", "React"],
+        link: "https://ragimodels.vercel.app/"
+    },
+
+    {
         title: "AI Guru J: 3D Virtual Python Tutor",
         desc: "An immersive 3D educational platform featuring a virtual avatar that teaches Python interactively. Built to revolutionize online learning with AI guidance.",
         tech: ["Python", "Three.js", "AI", "React"],

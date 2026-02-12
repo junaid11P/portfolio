@@ -71,4 +71,7 @@ ENV/
 env.bak/
 venv.bak/
 /backend/.venv
+*.db
+backend/rag/milvus.db
+backend/rag/vector_data.pkl
 

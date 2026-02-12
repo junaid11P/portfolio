@@ -31,18 +31,28 @@ An immersive 3D Portfolio website featuring an interactive 3D Avatar, AI-powered
    cd portfolio
    ```
 
-2. **Backend Setup:**
+2. **Backend Dependencies:**
    ```bash
    cd backend
    pip install -r requirements.txt
-   
-   # Create .env file
-   # Add: MONGODB_URI=... and GEMINI_API_KEY=...
-   
+   ```
+
+3. **Environment Setup:**
+   - Go to `backend/` folder.
+   - Copy `.env.example` to a new file named `.env`.
+   - Add your own keys:
+     ```bash
+     GEMINI_API_KEY=your_key_here
+     MONGODB_URI=your_mongodb_uri_here
+     ```
+   - **⚠️ Security:** Never commit your `.env` file to version control. It is already included in `.gitignore`.
+
+4. **Run Backend:**
+   ```bash
    python main.py
    ```
 
-3. **Frontend Setup:**
+5. **Frontend Setup:**
    ```bash
    cd frontend
    npm install

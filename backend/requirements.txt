@@ -4,3 +4,7 @@ pymongo
 python-dotenv
 requests
 google-generativeai
+fastembed
+pydantic
+pypdfium2
+numpy
