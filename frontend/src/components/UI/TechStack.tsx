@@ -26,7 +26,7 @@ const techCategories = [
     },
     {
         title: "🧪 Automation / Low-Code",
-        skills: ["n8n", "Hasura GraphQL", "Nhost Auth", "Netlify Deployment"]
+        skills: ["n8n", "Workato", "iPaaS", "Data Integration", "Business Process Automation", "Data Orchestration", "API Management", "Agentic AI Development", "Hasura GraphQL", "Nhost Auth", "Netlify Deployment"]
     },
     {
         title: "🧰 DevOps / Tools",
