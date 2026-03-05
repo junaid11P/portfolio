@@ -1,4 +1,4 @@
-import { Experience } from '@/components/Experience';
+import { Background } from '@/components/Background';
 import { useChat } from '@/hooks/useChat';
 import { useStore } from '@/hooks/useStore';
 import { Suspense, useState, KeyboardEvent, useRef, useEffect } from 'react';
@@ -42,7 +42,7 @@ export default function App() {
             {/* 3D Scene Container */}
             <div className="absolute inset-0 z-0 text-white">
                 <Suspense fallback={<LoadingScreen />}>
-                    <Experience />
+                    <Background />
                 </Suspense>
             </div>
 
